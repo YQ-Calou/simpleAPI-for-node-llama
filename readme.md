@@ -1,5 +1,5 @@
 <div align="center"> 
-    <h1>node-llama_API</h1>
+    <h1>simpleAPI-for-node-llama</h1>
     <p>利用API的方式調用gguf</p>
     <sub>更簡單的在nodejs中調用gguf回應。</sub>
     <p></p>
