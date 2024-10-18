@@ -1,0 +1,7 @@
+{
+    "cpu_usage" : 100,
+    "gpu_mode" : "cuda",
+    "gpu_layer" : 100,
+    "use_model" : "gemma-2-9b-it-Q3_K_L.gguf",
+    "web_port" : 7860
+}
