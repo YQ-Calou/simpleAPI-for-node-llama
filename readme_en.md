@@ -57,7 +57,7 @@ Details are as follows:
 | Name | Details |
 |-----|-----|
 | cpu_usage | Percentage of CPU available |
-| gpu_mode | GPU mode ("vulkan" | "cuda" | "metal" | false) |
+| gpu_mode | GPU mode ( "vulkan" \| "cuda" \| "metal" \| false ) |
 | gpu_layer | Number of GPU layers (smaller values use less VRAM but increase CPU load) |
 | use_model | Model being used |
 | web_port | Network interface port (not yet available) |
