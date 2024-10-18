@@ -1,5 +1,5 @@
 <div align="center"> 
-    <h1>node-llama_API</h1>
+    <h1>simpleAPI-for-node-llama</h1>
     <p>Call gguf using API.</p>
     <sub>It’s easier to call gguf responses in Node.js.</sub>
     <p></p>
