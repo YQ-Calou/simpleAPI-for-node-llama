@@ -1,7 +1,7 @@
 <div align="center"> 
     <h1>simpleAPI-for-node-llama</h1>
-    <p>Call gguf using API.</p>
-    <sub>It’s easier to call gguf responses in Node.js.</sub>
+    <p>Call gguf using API</p>
+    <sub>Call gguf response more easily in nodejs.</sub>
     <p></p>
 </div>  
 
@@ -10,57 +10,59 @@
 ![Language](https://badgen.net/badge/Language/Javascript/orange)
 ![Version](https://badgen.net/badge/Node%20Version/v20.17.0/green)
 ![Support](https://badgen.net/badge/icon/Windows?icon=windows&label=Support)
-![Support](https://badgen.net/badge/icon/Linux?icon=terminal&label=Support)
+![Support](https://badgen.net/badge/icon/Liunx?icon=terminal&label=Support)
 ![Support](https://badgen.net/badge/icon/MacOS?icon=apple&label=Support)
 
 </div>
 
 <div align="center">
 
-[繁體中文](readme.md) | English
+[Traditional Chinese](readme.md) | English
 
 </div>
 
-## Current Testing
-Running speed tested with `gemma-2 Q3` on the question "As an AI, what are five benefits you can bring to this world," all using `Node.js v20.17.0`.
+## Current Test
+The running speed is tested by ``gemma-2 Q3`` inferring "Five benefits that AI can bring to the world". All tests use ``Nodejs v20.17.0``.
 
-| | Test Platform 1 (9B model) | Test Platform 2 (9B model) | Test Platform 3 (2B model) | Test Platform 4 (2B model) |
-|-----|-----|-----|-----|-----|
-| Platform | Windows | Windows | Windows | Liunx(Docker)
-| CPU | Intel i7-11800H | Intel i7-12700 | Intel i5-8250U | intel i5-7500 |
-| Graphics Card | Nvidia RTX 3070 Laptop | Nvidia RTX 2060 Super | Nvidia MX150 | NaN|
-| Video Memory | 8GB | 8GB | 2GB | NaN |
-| RAM | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop | 16GB DDR4 |
-| Speed (CUDA) | 4.310s | 5.464s | 41.253s | NaN |
-| Speed (Vulkan) | 11.143s | 13.893s | 207.742s | NaN |
-| Speed (CPU) | 89.468s | 80.125s | 70.111s | 34.079s |
-| Speed (Metal) | NaN | NaN | NaN | NaN |
+| | Test Platform 1 (9B) | Test Platform 2 (9B) | Test Platform 3 (2B) | Test Platform 4 (2B) | Test Platform 5 (2B) |
+|-----|-----|-----|-----|-----|-----|
+| Platform | Windows | Windows | Windows | Liunx | MacOS |
+| CPU | intel i7-11800H | intel i7-12700 | intel i5-8250u | intel i5-7500 | Apple M3 Max |
+| GPU | RTX 3070 Laptop | RTX 2060 Super | MX150 | NaN | M3 30 Core GPU |
+| VRAM | 8GB | 8GB | 2GB | NaN | 32GB(UMA) |
+| RAM | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop | 16GB DDR4 | 32GB LPDDR4X |
+| Speed(CUDA) | 4.310s | 5.464s | 41.253s | NaN | NaN |
+| Speed(Vulkan) | 11.143s | 13.893s | 207.742s | NaN | NaN |
+| Speed(CPU) | 89.468s | 80.125s | 70.111s | 34.079s | 3.190s |
+| Speed(Metal) | NaN | NaN | NaN | NaN | 2.172s |
 
-Let's forget about the Vulkan performance of the MX150...
+Forget about MX150's vulkan...
 
-## Operating Environment
-**Required Installations**
+## Running Environment
+Required Installation
 - [Git (Windows)](https://git-scm.com/)
-- [Node.js (All Platform)](https://nodejs.org/en)
+- [Node.js (Required for all platforms)](https://nodejs.org/en)
 
-**Optional Installations**
-- [CUDA Toolkit (if you have nvdia GPU)](https://developer.nvidia.com/cuda-toolkit)
+Optional Installation
+- [CUDA Toolkit (If you have an Nvdia graphics card)](https://developer.nvidia.com/cuda-toolkit)
+- [Vulkan SDK (Windows)](https://sdk.lunarg.com/sdk/download/latest/windows/vulkan-sdk.exe)
+
 
 ## Basic Debugging
-Model storage is in the folder `models/`
+The model is located in the ``models/`` folder
 
-System prompt is located at `prompt/systemPrompt.txt`
+The system prompt is ``prompt/systemPrompt.txt``
 
-Please adjust `local.json`
+Please adjust ``local.json``
 
-Details are as follows:
+Details are as follows
 | Name | Details |
 |-----|-----|
-| cpu_usage | Percentage of CPU available |
+| cpu_usage | CPU usage percentage |
 | gpu_mode | GPU mode ( "vulkan" \| "cuda" \| "metal" \| false ) |
-| gpu_layer | Number of GPU layers (smaller values use less VRAM but increase CPU load) |
-| use_model | Model being used |
-| web_port | Network interface port (not yet available) |
+| gpu_layer | GPU layers (The smaller the value, the less Vram usage, the greater the CPU load) |
+| use_model | Model used |
+| web_port | Web interface Port (Not ready) |
 
 ## Example Usage
 ### Windows
@@ -68,7 +70,7 @@ Details are as follows:
 ./start.bat
 ```
 
-### Linux
+### Liunx
 ```shell
 chmod 777 ./start.sh
 ./start.sh
@@ -76,47 +78,47 @@ chmod 777 ./start.sh
 
 Done!
 
-## Example Code Usage
+## Usage Example
 ```js
-import {Local_Llama} from "./llama.mjs";    // Load llama
+import {Local_Llama} from "./llama.mjs";    //load llama
 
-// New Llama
+//new Llama
 let new_llama = new Local_Llama();
 await new_llama.initialize();
 
 async function runChat(){
-    // Generation configuration
+    //generationConfig
     const generationConfig = {
         temperature: 1,
         topk: 40,
         topP: 0.95
     };
 
-    // New session
-    new_llama.newSession({
+    //newSeesion
+    new_llama.newSeesion({
         generationConfig
     });
 
-    // New chat
+    //newChat
     new_llama.newChat({
         systemInstruction: "You are a useful assistant.",
         history: []
     });
 
-    // Send message
-    const result = await new_llama.sendMessage("INPUT_YOUR_MESSAGE_HERE");
+    //sendMessage
+    const result = await new_llama.sendMessage("INPUT_YOUR_MESSAGE_ HERE");
     console.log(result);
 }
 
 runChat();
 ```
 
-## About MacOS
-I don’t have an environment. If someone is willing to help with testing, please contact me!
+## Contributors
+The following are project contributors. Many thanks for their testing contributions.
+- [GuaZi (MacOS & 3090ti tester)](https://github.com/guazixd)
+- [Necostw (i7-12700 tester)](https://github.com/necostw)
 
-Discord: caloutw
-
-## Usage Projects
-Below are the projects used, huge thanks for the contributions:
+## Used Projects
+The following projects are used. Many thanks for their contributions.
 - [Node-llama-cpp](https://github.com/withcatai/node-llama-cpp)
 - [Node-llama_webgui](https://github.com/YQ-Haroiii/node-llama_webgui)
