@@ -24,17 +24,17 @@
 ## 目前測試
 運行速度由 ``gemma-2 Q3`` 推理「身為人工智慧，你能為這世界帶來的五個好處」測試，全部採用 ``Nodejs v20.17.0``。
 
-| | 測試平台1 (9B模型) | 測試平台2 (9B模型) | 目前最低配備平台 (2B模型) | 
-|-----|-----|-----|-----|
-| 平台 | Windows | Windows | Windows |
-| CPU | intel i7-11800H | intel i7-12700 | intel i5-8250u |
-| 顯示卡 | Nvdia RTX 3070 Laptop | Nvdia RTX 2060 Super | Nvdia MX150 |
-| 顯存 | 8GB | 8GB | 2GB |
-| 記憶體 | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop |
-| 速度(CUDA) | 4.310s | 5.464s | 41.253s |
-| 速度(Vulkan) | 11.143s | 13.893s | 207.742s |
-| 速度(CPU) | 89.468s | 80.125s | 70.111s |
-| 速度(Metal) | NaN | NaN | NaN |
+| | 測試平台1 (9B模型) | 測試平台2 (9B模型) | 測試平台3 (2B模型) | 測試平台4 (2B模型) |
+|-----|-----|-----|-----|-----|
+| 平台 | Windows | Windows | Windows | Liunx(Docker) |
+| CPU | intel i7-11800H | intel i7-12700 | intel i5-8250u | intel i5-7500 |
+| 顯示卡 | Nvdia RTX 3070 Laptop | Nvdia RTX 2060 Super | Nvdia MX150 | NaN |
+| 顯存 | 8GB | 8GB | 2GB | NaN |
+| 記憶體 | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop | 16GB DDR4 |
+| 速度(CUDA) | 4.310s | 5.464s | 41.253s | NaN |
+| 速度(Vulkan) | 11.143s | 13.893s | 207.742s | NaN |
+| 速度(CPU) | 89.468s | 80.125s | 70.111s | 34.079s |
+| 速度(Metal) | NaN | NaN | NaN | NaN |
 
 MX150 的 vulkan 就算了吧...
 
