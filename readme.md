@@ -40,11 +40,11 @@ MX150 的 vulkan 就算了吧...
 
 ## 運行環境
 必要安裝
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
+- [Git (Windwos)](https://git-scm.com/)
+- [Node.js (所有平台必須)](https://nodejs.org/en)
 
 選擇安裝
-- [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)
+- [CUDA Toolkit (如果你有Nvdia顯卡)](https://developer.nvidia.com/cuda-toolkit)
 
 ## 基礎調試
 模型存放位置於資料夾 ``models/`` 下
