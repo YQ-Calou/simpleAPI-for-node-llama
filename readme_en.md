@@ -11,30 +11,43 @@
 ![Version](https://badgen.net/badge/Node%20Version/v20.17.0/green)
 ![Support](https://badgen.net/badge/icon/Windows?icon=windows&label=Support)
 ![Support](https://badgen.net/badge/icon/Liunx?icon=terminal&label=Support)
+![Support](https://badgen.net/badge/icon/Turmux?icon=terminal&label=Support)
 ![Support](https://badgen.net/badge/icon/MacOS?icon=apple&label=Support)
 
 </div>
 
 <div align="center">
 
-[Traditional Chinese](readme.md) | English
+[繁體中文](readme.md) | English
 
 </div>
 
 ## Current Test
 The running speed is tested by ``gemma-2 Q3`` inferring "Five benefits that AI can bring to the world". All tests use ``Nodejs v20.17.0``.
 
-| | Test Platform 1 (9B) | Test Platform 2 (9B) | Test Platform 3 (2B) | Test Platform 4 (2B) | Test Platform 5 (2B) |
+| | Platform 1 (9B) | Platform 2 (9B) | Platform 3 (2B) | Platform 4 (2B) | Platform 5 (2B) |
 |-----|-----|-----|-----|-----|-----|
-| Platform | Windows | Windows | Windows | Liunx | MacOS |
-| CPU | intel i7-11800H | intel i7-12700 | intel i5-8250u | intel i5-7500 | Apple M3 Max |
-| GPU | RTX 3070 Laptop | RTX 2060 Super | MX150 | NaN | M3 30 Core GPU |
-| VRAM | 8GB | 8GB | 2GB | NaN | 32GB(UMA) |
-| RAM | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop | 16GB DDR4 | 32GB LPDDR4X |
-| Speed(CUDA) | 4.310s | 5.464s | 41.253s | NaN | NaN |
-| Speed(Vulkan) | 11.143s | 13.893s | 207.742s | NaN | NaN |
-| Speed(CPU) | 89.468s | 80.125s | 70.111s | 34.079s | 3.190s |
-| Speed(Metal) | NaN | NaN | NaN | NaN | 2.172s |
+| Platform | Windows | Windows | Windows | Linux (Docker) | MacOS |
+| CPU | Intel i7-11800H | Intel i7-12700 | Intel i5-8250u | Intel i5-7500 | Apple M3 Max |
+| GPU | RTX 3070 Laptop | RTX 2060 Super | MX150 |  | M3 30-Core GPU |
+| VRAM | 8GB | 8GB | 2GB |  | 32GB (UMA) |
+| Memory | 64GB | 64GB | 16GB | 16GB | 32GB |
+| Speed (CUDA) | 4.310s | 5.464s | 41.253s | No Support | No Support |
+| Speed (Vulkan) | 11.143s | 13.893s | 207.742s | No Support | No Support |
+| Speed (CPU) | 89.468s | 80.125s | 70.111s | 34.079s | 3.190s |
+| Speed (Metal) | No Support | No Support | No Support | No Support | 2.172s |
+
+| | Platform 6 (2B) |
+|-----|-----|
+| Platform | Termux (Android) |
+| CPU | Dimensity 7200 Ultra |
+| GPU |  |
+| VRAM |  |
+| Memory | 16GB |
+| Speed (CUDA) | No Support |
+| Speed (Vulkan) | No Support |
+| Speed (CPU) | 132.496s |
+| Speed (Metal) | No Support |
 
 Forget about MX150's vulkan...
 
@@ -74,6 +87,22 @@ Details are as follows
 ```shell
 chmod 777 ./start.sh
 ./start.sh
+```
+
+### Turmux
+```shell
+pkg install nodejs
+pkg install cmake
+pkg install zip
+wget https://github.com/YQ-Haroiii/simpleAPI-for-node-llama/archive/refs/tags/v1.0.zip
+unzip v1.0.zip
+cd <資料夾名稱(不知道的話可以用ls看一下這個目錄底下的所有資料夾進入)>
+cd models
+wget <gguf模型(等他下載，看檔案大小)>
+cd ..
+npm install cmake-js
+npm install node-llama-cpp
+node console_service.mjs
 ```
 
 Done!
