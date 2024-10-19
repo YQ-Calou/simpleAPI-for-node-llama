@@ -24,27 +24,27 @@
 ## Current Testing
 Running speed tested with `gemma-2 Q3` on the question "As an AI, what are five benefits you can bring to this world," all using `Node.js v20.17.0`.
 
-| | Test Platform 1 (9B model) | Test Platform 2 (9B model) | Current Minimum Spec Platform (2B model) | 
-|-----|-----|-----|-----|
-| Platform | Windows | Windows | Windows |
-| CPU | Intel i7-11800H | Intel i7-12700 | Intel i5-8250U |
-| Graphics Card | Nvidia RTX 3070 Laptop | Nvidia RTX 2060 Super | Nvidia MX150 |
-| Video Memory | 8GB | 8GB | 2GB |
-| RAM | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop |
-| Speed (CUDA) | 4.310s | 5.464s | 41.253s |
-| Speed (Vulkan) | 11.143s | 13.893s | 207.742s |
-| Speed (CPU) | 89.468s | 80.125s | 70.111s |
-| Speed (Metal) | NaN | NaN | NaN |
+| | Test Platform 1 (9B model) | Test Platform 2 (9B model) | Test Platform 3 (2B model) | 
+|-----|-----|-----|-----|-----|
+| Platform | Windows | Windows | Windows | Liunx(Docker)
+| CPU | Intel i7-11800H | Intel i7-12700 | Intel i5-8250U | intel i5-7500 |
+| Graphics Card | Nvidia RTX 3070 Laptop | Nvidia RTX 2060 Super | Nvidia MX150 | NaN|
+| Video Memory | 8GB | 8GB | 2GB | NaN |
+| RAM | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop | 16GB DDR4 |
+| Speed (CUDA) | 4.310s | 5.464s | 41.253s | NaN |
+| Speed (Vulkan) | 11.143s | 13.893s | 207.742s | NaN |
+| Speed (CPU) | 89.468s | 80.125s | 70.111s | 34.079s |
+| Speed (Metal) | NaN | NaN | NaN | NaN |
 
 Let's forget about the Vulkan performance of the MX150...
 
 ## Operating Environment
 **Required Installations**
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
+- [Git (Windows)](https://git-scm.com/)
+- [Node.js (All Platform)](https://nodejs.org/en)
 
 **Optional Installations**
-- [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)
+- [CUDA Toolkit (if you have nvdia GPU)](https://developer.nvidia.com/cuda-toolkit)
 
 ## Basic Debugging
 Model storage is in the folder `models/`
