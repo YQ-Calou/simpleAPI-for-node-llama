@@ -24,17 +24,17 @@
 ## 目前測試
 運行速度由 ``gemma-2 Q3`` 推理「身為人工智慧，你能為這世界帶來的五個好處」測試，全部採用 ``Nodejs v20.17.0``。
 
-| | 測試平台1 (9B模型) | 測試平台2 (9B模型) | 測試平台3 (2B模型) | 測試平台4 (2B模型) |
-|-----|-----|-----|-----|-----|
-| 平台 | Windows | Windows | Windows | Liunx(Docker) |
-| CPU | intel i7-11800H | intel i7-12700 | intel i5-8250u | intel i5-7500 |
-| 顯示卡 | Nvdia RTX 3070 Laptop | Nvdia RTX 2060 Super | Nvdia MX150 | NaN |
-| 顯存 | 8GB | 8GB | 2GB | NaN |
-| 記憶體 | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop | 16GB DDR4 |
-| 速度(CUDA) | 4.310s | 5.464s | 41.253s | NaN |
-| 速度(Vulkan) | 11.143s | 13.893s | 207.742s | NaN |
-| 速度(CPU) | 89.468s | 80.125s | 70.111s | 34.079s |
-| 速度(Metal) | NaN | NaN | NaN | NaN |
+| | 測試平台1 (9B模型) | 測試平台2 (9B模型) | 測試平台3 (2B模型) | 測試平台4 (2B模型) | 測試平台5 (2B模型) |
+|-----|-----|-----|-----|-----|-----|
+| 平台 | Windows | Windows | Windows | Liunx(Docker) | MacOS |
+| CPU | intel i7-11800H | intel i7-12700 | intel i5-8250u | intel i5-7500 | Apple M3 Max |
+| 顯示卡 | Nvdia RTX 3070 Laptop | Nvdia RTX 2060 Super | Nvdia MX150 | NaN | M3 30 Core GPU |
+| 顯存 | 8GB | 8GB | 2GB | NaN | 32GB(UMA) |
+| 記憶體 | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop | 16GB DDR4 | 32GB LPDDR4X |
+| 速度(CUDA) | 4.310s | 5.464s | 41.253s | NaN | NaN |
+| 速度(Vulkan) | 11.143s | 13.893s | 207.742s | NaN | NaN |
+| 速度(CPU) | 89.468s | 80.125s | 70.111s | 34.079s | 3.190s |
+| 速度(Metal) | NaN | NaN | NaN | NaN | 2.172s |
 
 MX150 的 vulkan 就算了吧...
 
@@ -45,6 +45,7 @@ MX150 的 vulkan 就算了吧...
 
 選擇安裝
 - [CUDA Toolkit (如果你有Nvdia顯卡)](https://developer.nvidia.com/cuda-toolkit)
+- [Vulkan SDK (Windows)](https://sdk.lunarg.com/sdk/download/latest/windows/vulkan-sdk.exe)
 
 ## 基礎調試
 模型存放位置於資料夾 ``models/`` 下
@@ -111,10 +112,10 @@ async function runChat(){
 runChat();
 ```
 
-## 關於 MacOS
-我沒有環境，有意幫忙測試編譯者，歡迎聯絡!
-
-Discord : caloutw
+## 協助者
+以下是項目協助人員，十分感謝他們的測試貢獻
+- [GuaZi (MacOS & 3090ti 測試者)](https://github.com/guazixd)
+- [Necostw (i7-12700 測試者)](https://github.com/necostw)
 
 ## 使用項目
 以下為使用項目，非常感謝貢獻
