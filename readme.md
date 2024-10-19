@@ -88,7 +88,7 @@ chmod 777 ./start.sh
 ./start.sh
 ```
 
-## Turmux
+### Turmux
 ```shell
 pkg install nodejs
 pkg install cmake
