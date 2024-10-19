@@ -19,10 +19,12 @@ async function console_readline() {
     //wait for input
     let user_message = await new Promise(resolve => rl.question("\x1b[34mUser: ", (answer) => resolve(answer)));
 
+    //close
+    rl.close();
+
     //exit
-    if(user_message === "/exit") {
+    if(user_message == "/exit") {
         rl.close();
-        console.log();
         console.log(`\x1b[35mSystem: Service is shutting down.`);
         console.log("\x1b[0m");
         process.exit();
@@ -36,10 +38,8 @@ async function console_readline() {
 
     //print
     console.log(`\x1b[35mAssistant: ${reply}\n`);
-
-    //close
-    rl.close();
 }
+
 
 async function main(){
     console.clear();
