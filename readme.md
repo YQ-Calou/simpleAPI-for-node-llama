@@ -11,6 +11,7 @@
 ![Version](https://badgen.net/badge/Node版本/v20.17.0/green)
 ![Support](https://badgen.net/badge/icon/Windows?icon=windows&label=支援)
 ![Support](https://badgen.net/badge/icon/Liunx?icon=terminal&label=支援)
+![Support](https://badgen.net/badge/icon/Turmux?icon=terminal&label=支援)
 ![Support](https://badgen.net/badge/icon/MacOS?icon=apple&label=支援)
 
 </div>
@@ -28,13 +29,25 @@
 |-----|-----|-----|-----|-----|-----|
 | 平台 | Windows | Windows | Windows | Liunx(Docker) | MacOS |
 | CPU | intel i7-11800H | intel i7-12700 | intel i5-8250u | intel i5-7500 | Apple M3 Max |
-| 顯示卡 | RTX 3070 Laptop | RTX 2060 Super | MX150 | NaN | M3 30 Core GPU |
-| 顯存 | 8GB | 8GB | 2GB | NaN | 32GB(UMA) |
-| 記憶體 | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop | 16GB DDR4 | 32GB LPDDR4X |
-| 速度(CUDA) | 4.310s | 5.464s | 41.253s | NaN | NaN |
-| 速度(Vulkan) | 11.143s | 13.893s | 207.742s | NaN | NaN |
+| 顯示卡 | RTX 3070 Laptop | RTX 2060 Super | MX150 |  | M3 30 Core GPU |
+| 顯存 | 8GB | 8GB | 2GB |  | 32GB(UMA) |
+| 記憶體 | 64GB | 64GB | 16GB | 16GB | 32GB |
+| 速度(CUDA) | 4.310s | 5.464s | 41.253s | No Support | No Support |
+| 速度(Vulkan) | 11.143s | 13.893s | 207.742s | No Support | No Support |
 | 速度(CPU) | 89.468s | 80.125s | 70.111s | 34.079s | 3.190s |
-| 速度(Metal) | NaN | NaN | NaN | NaN | 2.172s |
+| 速度(Metal) | No Support | No Support | No Support | No Support | 2.172s |
+
+| | 平台6 (2B) |
+|-----|-----|
+| 平台 | Turmux(Android) |
+| CPU | 天璣 7200 Ultra |
+| 顯示卡 |  |
+| 顯存 |  |
+| 記憶體 | 16GB |
+| 速度(CUDA) | No Support |
+| 速度(Vulkan) | No Support |
+| 速度(CPU) | 132.496s |
+| 速度(Metal) | No Support |
 
 MX150 的 vulkan 就算了吧...
 
@@ -73,6 +86,22 @@ MX150 的 vulkan 就算了吧...
 ```shell
 chmod 777 ./start.sh
 ./start.sh
+```
+
+## Turmux
+```shell
+pkg install nodejs
+pkg install cmake
+pkg install zip
+wget https://github.com/YQ-Haroiii/simpleAPI-for-node-llama/archive/refs/tags/v1.0.zip
+unzip v1.0.zip
+cd <資料夾名稱(不知道的話可以用ls看一下這個目錄底下的所有資料夾進入)>
+cd models
+wget <gguf模型(等他下載，看檔案大小)>
+cd ..
+npm install cmake-js
+npm install node-llama-cpp
+node console_service.mjs
 ```
 
 搞定!
