@@ -96,9 +96,9 @@ pkg install cmake
 pkg install zip
 wget https://github.com/YQ-Haroiii/simpleAPI-for-node-llama/archive/refs/tags/v1.0.zip
 unzip v1.0.zip
-cd <資料夾名稱(不知道的話可以用ls看一下這個目錄底下的所有資料夾進入)>
+cd <folder name>
 cd models
-wget <gguf模型(等他下載，看檔案大小)>
+wget <gguf models url>
 cd ..
 npm install cmake-js
 npm install node-llama-cpp
