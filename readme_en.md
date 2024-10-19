@@ -24,7 +24,7 @@
 ## Current Testing
 Running speed tested with `gemma-2 Q3` on the question "As an AI, what are five benefits you can bring to this world," all using `Node.js v20.17.0`.
 
-| | Test Platform 1 (9B model) | Test Platform 2 (9B model) | Test Platform 3 (2B model) | 
+| | Test Platform 1 (9B model) | Test Platform 2 (9B model) | Test Platform 3 (2B model) | Test Platform 4 (2B model) |
 |-----|-----|-----|-----|-----|
 | Platform | Windows | Windows | Windows | Liunx(Docker)
 | CPU | Intel i7-11800H | Intel i7-12700 | Intel i5-8250U | intel i5-7500 |
