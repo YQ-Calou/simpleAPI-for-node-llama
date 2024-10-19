@@ -24,11 +24,11 @@
 ## 目前測試
 運行速度由 ``gemma-2 Q3`` 推理「身為人工智慧，你能為這世界帶來的五個好處」測試，全部採用 ``Nodejs v20.17.0``。
 
-| | 測試平台1 (9B模型) | 測試平台2 (9B模型) | 測試平台3 (2B模型) | 測試平台4 (2B模型) | 測試平台5 (2B模型) |
+| | 平台1 (9B) | 平台2 (9B) | 平台3 (2B) | 平台4 (2B) | 平台5 (2B) |
 |-----|-----|-----|-----|-----|-----|
 | 平台 | Windows | Windows | Windows | Liunx(Docker) | MacOS |
 | CPU | intel i7-11800H | intel i7-12700 | intel i5-8250u | intel i5-7500 | Apple M3 Max |
-| 顯示卡 | Nvdia RTX 3070 Laptop | Nvdia RTX 2060 Super | Nvdia MX150 | NaN | M3 30 Core GPU |
+| 顯示卡 | RTX 3070 Laptop | RTX 2060 Super | MX150 | NaN | M3 30 Core GPU |
 | 顯存 | 8GB | 8GB | 2GB | NaN | 32GB(UMA) |
 | 記憶體 | 64GB DDR4 Laptop | 64GB DDR4 | 16GB DDR4 Laptop | 16GB DDR4 | 32GB LPDDR4X |
 | 速度(CUDA) | 4.310s | 5.464s | 41.253s | NaN | NaN |
