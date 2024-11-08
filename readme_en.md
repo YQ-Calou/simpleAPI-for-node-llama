@@ -144,7 +144,7 @@ runChat();
 
 ## Contributors
 The following are project contributors. Many thanks for their testing contributions.
-- [GuaZi (MacOS & 3090ti tester)](https://github.com/guazixd)
+- [GuaZi (MacOS & 3090ti tester)](https://github.com/guazinit)
 - [Necostw (i7-12700 tester)](https://github.com/necostw)
 
 ## Used Projects
