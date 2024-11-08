@@ -143,7 +143,7 @@ runChat();
 
 ## 協助者
 以下是項目協助人員，十分感謝他們的測試貢獻
-- [GuaZi (MacOS & 3090ti 測試者)](https://github.com/guazixd)
+- [GuaZi (MacOS & 3090ti 測試者)](https://github.com/guazinit)
 - [Necostw (i7-12700 測試者)](https://github.com/necostw)
 
 ## 使用項目
